@@ -2,6 +2,7 @@
 @extends('app')
 @section('content')
 
-<h1>トップページ</h1>
-
+<div class="p-hero">
+    <img src="{{ asset("images/images.jpg") }}" alt="">
+</div>
 @endsection
