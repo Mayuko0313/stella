@@ -1,5 +1,5 @@
         <div class="l-header">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -14,7 +14,10 @@
                   <a class="nav-link" href="#">Woman</a>
                 </li>
                 {{-- ロゴ --}}
-                  <a class="navbar-brand" href="#">ロゴ</a>
+                  <a class="navbar-brand" href="#"></a>
+                  <div class="main-logo">
+                    <img src="{{ asset("images/STElla Golf.png") }}" alt="">
+                </div>
                 </li>
 
                 {{-- カート --}}

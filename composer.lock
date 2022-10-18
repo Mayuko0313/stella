@@ -4737,7 +4737,7 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Maps an HTTP request to a set of configuration variables",
+            "description": "Maps an HTTP request to a set of configuration pp",
             "homepage": "https://symfony.com",
             "keywords": [
                 "router",

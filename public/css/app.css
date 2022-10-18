@@ -79,23 +79,23 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
 }
 
 a {
-  transition: 0.3s;
-  color: #fff;
+    transition: 0.3s;
+    color: #fff;
 }
 
 a:hover {
-  transition: 0.3s;
-  color: rgb(211, 222, 105);
+    transition: 0.3s;
+    color: rgb(211, 222, 105);
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -110,51 +110,122 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+    content: "";
+    content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-.l-header {
-  height: 10vh;
-}
+/* .l-header {
+    height: 10vh;
+} */
 
 .navbar-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.p-hero {
+/* .p-hero {
   width: 100vw;
   height: 90vh;
-}
-.p-hero > img {
+} */
+/* .p-hero > img {
   width: 100%;
   height: 100%;
+} */
+
+
+
+.main-logo {
+    width: 80px;
+    height: 80%;
+}
+
+.main-logo>img {
+    width: 100%;
+    height: 100%;
+}
+
+/* .mens-logo>img {
+    width: 50%;
+    height: 50%;
+    margin: 0auto;
+    list-style:none;
+    text-align: left;
+} */
+
+.mens-logo>img {
+    list-style: none;
+    float: left;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+}
+
+.woman-logo>img {
+    list-style: none;
+    float: right;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+}
+
+
+.footer__nav {
+    float: right;
+    padding: 1%;
+}
+
+.woman-logo>img {
+    border-bottom: 1px solid #000;
+}
+
+.mens-logo>img {
+    border-bottom: 1px solid #000;
+}
+
+.footer__copyright {
+    float: left;
+    padding: 1%;
+    width: 225px;
+    height: 150px;
+    vertical-align: middle;
+}
+
+.ico-instagram {
+    float: left;
+    padding: 1%;
+    width: 225px;
+    height: 150px;
+    vertical-align: middle;
+}
+
+.footer-main-logo {
+    display: inline-block;
+    vertical-align: middle;
 }
