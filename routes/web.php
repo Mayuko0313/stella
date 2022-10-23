@@ -17,13 +17,10 @@ Route::get('/', function () {
     return view('pages.top');
 });
 
-Route::get('/mens', function () {
-    return view('pages.mens');
-})->name('mens');
+Route::get('/productList', function () {
+    return view('pages.productList');
+})->name('productList');
 
-Route::get('/woman', function () {
-    return view('pages.woman');
-})->name('woman');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

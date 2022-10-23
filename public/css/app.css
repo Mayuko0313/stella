@@ -205,7 +205,7 @@ table {
     border-bottom: 1px solid #000;
 }
 
-.mens-logo>img {
+.product-logo>img {
     border-bottom: 1px solid #000;
 }
 
@@ -231,27 +231,28 @@ table {
     transform: translateX(-50%);
 }
 
-.product_item>img {
-    list-style: none;
-    float: right;
-    width: 50%;
-    height: 50%;
-    padding: 10px;
-
+.product-contents {
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.product-item_content_iris {
+.product-item {
+    width: 45vw;
+    height: 480px;
     text-align: center;
 }
 
-.product-item_content_cello {
-    text-align: center;
+.product-item_img {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+
 }
 
-.product-item_content_rotie {
-    text-align: center;
-}
-
-.product-item_content_cellojacket {
-    text-align: center;
+.product-item_img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
