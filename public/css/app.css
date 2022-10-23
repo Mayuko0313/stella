@@ -162,8 +162,8 @@ table {
 
 
 .main-logo {
-    width: 80px;
-    height: 80%;
+    width: 280px;
+    height: 90%;
 }
 
 .main-logo>img {
@@ -226,6 +226,32 @@ table {
 }
 
 .footer-main-logo {
-    display: inline-block;
-    vertical-align: middle;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product_item>img {
+    list-style: none;
+    float: right;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+
+}
+
+.product-item_content_iris {
+    text-align: center;
+}
+
+.product-item_content_cello {
+    text-align: center;
+}
+
+.product-item_content_rotie {
+    text-align: center;
+}
+
+.product-item_content_cellojacket {
+    text-align: center;
 }

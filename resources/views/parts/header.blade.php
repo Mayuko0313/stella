@@ -7,11 +7,11 @@
               <ul class="navbar-nav">
                   {{-- Mens --}}
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Mens</a>
+                  <a class="nav-link" href=" {{ route("mens") }}">Mens</a>
                 </li>
                 {{-- Woman --}}
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Woman</a>
+                  <a class="nav-link" href=" {{ route("woman") }}">Woman</a>
                 </li>
                 {{-- ロゴ --}}
                   <a class="navbar-brand" href="#"></a>

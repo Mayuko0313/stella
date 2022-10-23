@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Route::get('/mens', function () {
     return view('pages.mens');
-});
+})->name('mens');
+
+Route::get('/woman', function () {
+    return view('pages.woman');
+})->name('woman');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
