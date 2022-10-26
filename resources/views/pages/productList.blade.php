@@ -16,11 +16,12 @@
         <span class="product-item_price">
             <span class="money">¥20,000</span>
         </span>
-                <div class="product-item_img" href="#">
+            <a href="{{ route('productDetail') }}">
+                <div class="product-item_img">
                 <img src="{{ asset("images/jacket.webp") }}" alt="">
-           </div>
-           </div>
-
+            </div>
+            </a>
+            </div>
 
             <div class="product-item">
             <h5 class="product-item_title">
@@ -29,12 +30,14 @@
             <span class="product-item_price">
                 <span class="money">¥10,000</span>
             </span>
-                <div class="product-item_img" href="#">
+            <a href="{{ route('productDetail') }}">
+                <div class="product-item_img">
                 <img src="{{ asset("images/vest.webp") }}" alt="">
            </div>
+           </a>
            </div>
 
-           
+           <button type="button" onClick="history.back()">戻る</button>
 
            </div>
            </div>

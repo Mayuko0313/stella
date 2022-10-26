@@ -11,7 +11,7 @@
     <a class="navbar-woman" href="#"></a>
     <img src="{{ asset("images/woman.jpg") }}" alt="">
 </div>
-
+</div>
 
 {{-- <div class="p-hero">
     <img src="{{ asset("images/images.jpg") }}" alt="">

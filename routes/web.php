@@ -21,9 +21,13 @@ Route::get('/productList', function () {
     return view('pages.productList');
 })->name('productList');
 
+Route::get('/productDetail', function () {
+    return view('pages.productDetail');
+})->name('productDetail');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__ . '/auth.php';
