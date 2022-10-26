@@ -228,7 +228,9 @@ table {
     vertical-align: middle;
 }
 
-.footer-main-logo {}
+.footer-main-logo {
+    list-style: none;
+}
 
 .product-contents {
     padding: 0 50px;
