@@ -22,7 +22,7 @@
 
                 {{-- カート --}}
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#">カート</a>
+                  <a class="nav-link" href="{{ route('cart') }}">カート</a>
                 </li>
 
                 @auth

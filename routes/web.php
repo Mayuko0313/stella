@@ -25,6 +25,10 @@ Route::get('/productDetail', function () {
     return view('pages.productDetail');
 })->name('productDetail');
 
+Route::get('/cart', function () {
+    return view('pages.cart');
+})->name('cart');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
