@@ -8,7 +8,7 @@
     </div>
     <div class="productDetail__info">
         <h5 class="productDetail__title">
-            <a>CELLO JACKET</a>
+            <p>CELLO JACKET</p>
         </h5>
         <div class="productDetail__price">
             <span class="money">¥20,000</span>
@@ -28,7 +28,7 @@
             <label class="form-check-label" for="inlineRadio3">L</label>
         </div>
         </div>
-        
+
         <button tipe="button" class="productDetail__cart">
             <h5>ADD TO CART</h5>
         </button>

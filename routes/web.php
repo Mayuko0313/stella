@@ -29,9 +29,20 @@ Route::get('/cart', function () {
     return view('pages.cart');
 })->name('cart');
 
+Route::get('/buyProcess', function () {
+    return view('pages.buyProcess');
+})->name('buyProcess');
+
+Route::get('/confirm', function () {
+    return view('pages.confirm');
+})->name('confirm');
+
+Route::get('/addProduct', function () {
+    return view('pages.addProduct');
+})->name('addProduct');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
 
 require __DIR__ . '/auth.php';
