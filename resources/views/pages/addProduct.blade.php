@@ -3,57 +3,56 @@
 @section('owner__content')
 
 <div class="add__product">
-    <form>
-        @csrf
-    <div class="add__product__img">
-        <img src="{{ asset("images/jacket.webp") }}" alt="">
-    </div>
-
     <form class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail4">
+        @csrf
+        <div class="add__product__img">
+            <img src="{{ asset("images/jacket.webp") }}" alt="">
         </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword4">
+        
+        <div class="col-sm-6">
+          <label for="productname" class="form-label">商品名</label>
+          <input type="text" class="form-control" id="product-name">
         </div>
-        <div class="col-12">
-          <label for="inputAddress" class="form-label">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+
+        <div class="col-sm-6">
+          <label for="inputState" class="form-label">Woman or Mens</label>
         </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+
+        <div class="col-sm-6">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>Woman</option>
+              <option>Mens</option>
+            </select>
         </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">City</label>
-          <input type="text" class="form-control" id="inputCity">
+
+        <div class="col-sm-6">
+          <label for="inputPassword4" class="form-label">商品種別</label>
         </div>
-        <div class="col-md-4">
-          <label for="inputState" class="form-label">State</label>
-          <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
+
+        <div class="col-sm-6">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>Outer</option>
+              <option>Tops</option>
+              <option>Dress</option>
+              <option>Pants</option>
+              <option>Skirt</option>
+            </select>
         </div>
-        <div class="col-md-2">
-          <label for="inputZip" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
+
+        <div class="col-sm-6">
+          <label for="inputAddress" class="form-label">金額</label>
+          <input type="text" class="form-control" id="product-name" placeholder="¥">
         </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
+
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary">商品追加</button>
         </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
-      </form>
 
     </form>
+</div>
 
 @endsection
