@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddProduct;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,12 +38,8 @@ Route::get('/confirm', function () {
     return view('pages.confirm');
 })->name('confirm');
 
-Route::get('/addProduct', function () {
-    return view('pages.addProduct');
-})->name('addProduct');
+Route::get('/addProduct', [AddProduct::class, 'index'])->name('addProduct');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::post('/addProduct', [AddProduct::class, 'addPost'])->name('addPost');
 
 require __DIR__ . '/auth.php';
