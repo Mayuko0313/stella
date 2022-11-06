@@ -98,5 +98,6 @@
     }
   });
 </script>
+<script src="{{ asset('js/fileAppload.js') }}"></script>
     </body>
 </html>

@@ -17,10 +17,18 @@ class CreateWearsTable extends Migration
         Schema::create('wears', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('size_id');
-            $table->integer('type_id');
-            $table->boolean('del_flg');
-            $table->integer('price');
+            $table->unsignedBigInteger('sex_id');
+            $table
+                ->foreign('sex_id')
+                ->references('id')
+                ->on('sexes');
+            $table->unsignedBigInteger('type_id');
+            $table
+                ->foreign('type_id')
+                ->references('id')
+                ->on('types');
+            $table->boolean('del_flg')->default(0);
+            $table->integer('price')->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });

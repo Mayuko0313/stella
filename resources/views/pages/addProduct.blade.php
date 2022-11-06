@@ -7,52 +7,127 @@
       action="{{ route('addPost') }}"
       method="post"
       name="addPost"
-      class="add-product-form"
+      class="add-product_form"
     >
 
         @csrf
-        <div class="add__product__img">
+        {{-- <div class="add__product__img">
             <img src="{{ asset("images/jacket.webp") }}" alt="">
-        </div>
-
+        </div> --}}
         <div class="col-sm-6 mt-3">
-          <label for="productname" class="form-label">商品名</label>
-          <input type="text" class="form-control" id="product-name">
-        </div>
-
-        <div class="col-sm-6 mt-3">
-          <label for="inputState" class="form-label">Woman or Mens</label>
-          <select id="inputState" class="form-select add-product-select">
-              <option>Woman</option>
-              <option>Mens</option>
-            </select>
-        </div>
-
-        <div class="col-sm-6 mt-3">
-          <label for="inputState" class="form-label">商品種別</label>
-          <select id="inputState" class="form-select add-product-select">
-              <option selected>Choose...</option>
-              <option>Outer</option>
-              <option>Tops</option>
-              <option>Dress</option>
-              <option>Pants</option>
-              <option>Skirt</option>
-            </select>
-        </div>
-
-        <div class="col-sm-6 mt-3">
-            <label for="inputState" class="form-label">サイズ</label>
-            <select id="inputState" class="form-select add-product-select">
-                <option selected>Choose...</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-              </select>
+          <label for="file" class="form-label">
+            ファイル
+          </label>
+          <div id="file" class="input-group">
+            <div class="custom-file">
+              <input type="file" id="cutomfile" class="custom-file-input" name="cutomfile[]" multiple />
+              <label class="custom-file-label" for="customfile" data-browse="参照">ファイル選択...</label>
+            </div>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-secondary reset">取消</button>
+            </div>
           </div>
+        </div>
 
         <div class="col-sm-6 mt-3">
-          <label for="inputAddress" class="form-label">金額</label>
-          <input type="text" class="form-control" id="product-name" placeholder="¥">
+          <label for="product_name" class="form-label">商品名</label>
+          <input
+            type="text"
+            name="product_name"
+            class="form-control @error('product_name') is-invalid @enderror"
+            id="product_name"
+            value="{{ old('product_name') }}"
+            autocomplete="product_name"
+            autofocus
+          >
+          @error('product_name')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+        </div>
+
+        <div class="col-sm-6 mt-3">
+          <label for="product_sex" class="form-label">Woman or Mens</label>
+          <select
+            id="product_sex"
+            class="form-select add-product_select"
+            name="product_sex"
+          >
+            <option
+              selected
+              value="1"
+              {{ old('product_sex') == 1 ? 'selected' : '' }}
+            >
+              Woman
+            </option>
+            <option
+              value="2"
+              {{ old('product_sex') == 2 ? 'selected' : '' }}
+            >
+              Mens
+            </option>
+          </select>
+        </div>
+
+        <div class="col-sm-6 mt-3">
+          <label for="product_type" class="form-label">商品種別</label>
+          <select
+            id="product_type"
+            class="form-select add-product_select"
+            name="product_type"
+          >
+            <option
+              selected
+              value="1"
+              {{ old('product_type') == 1 ? 'selected' : '' }}
+            >
+              Outer
+            </option>
+            <option
+              value="2"
+              {{ old('product_type') == 2 ? 'selected' : '' }}
+            >
+              Tops
+            </option>
+            <option
+              value="3"
+              {{ old('product_type') == 3 ? 'selected' : '' }}
+            >
+              Dress
+            </option>
+            <option
+              value="4"
+              {{ old('product_type') == 4 ? 'selected' : '' }}
+            >
+              Pants
+            </option>
+            <option
+              value="5"
+              {{ old('product_type') == 5 ? 'selected' : '' }}
+            >
+              Skirt
+            </option>
+          </select>
+        </div>
+
+        <div class="col-sm-6 mt-3">
+          <label for="product_price" class="form-label">金額</label>
+          <input
+            type="text"
+            class="form-control @error('product_price') is-invalid @enderror"
+            id="product_price"
+            name="product_price"
+            placeholder="¥"
+            value="{{ old('product_price') }}"
+            autocomplete="product_price"
+            autofocus
+          >
+          @error('product_price')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
         </div>
 
         <div class="col-sm-6 mt-3">

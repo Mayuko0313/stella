@@ -9,21 +9,21 @@
 
        <div class="woman-contents">
 
-       <div class="product-item">
-        <h5 class="product-item_title">
+       <div class="product_item">
+        <h5 class="product_item_title">
             <a>IRIS SKIRT</a>
         </h5>
-        <span class="product-item_price">
+        <span class="product_item_price">
             <span class="money">¥10,000</span>
         </span>
-            <div class="product-item_img" href="#">
+            <div class="product_item_img" href="#">
             <img src="{{ asset("images/skirt1.webp") }}" alt="">
        </div>
        </div>
 
 
-       <div class="product-item">
-        <h5 class="product-item_title">
+       <div class="product_item">
+        <h5 class="product_item_title">
             <a>CELLO SKIRT</a>
         </h5>
         <span class="price_amount">

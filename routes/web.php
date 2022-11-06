@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddProductController;
+use App\Http\Controllers\ProductListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,7 @@ Route::get('/', function () {
     return view('pages.top');
 });
 
-Route::get('/productList', function () {
-    return view('pages.productList');
-})->name('productList');
+Route::get('/productList/{sex_id}', [ProductListController::class, 'index'])->name('productList');
 
 Route::get('/productDetail', function () {
     return view('pages.productDetail');
