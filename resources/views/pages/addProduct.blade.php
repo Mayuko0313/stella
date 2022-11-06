@@ -41,6 +41,16 @@
         </div>
 
         <div class="col-sm-6 mt-3">
+            <label for="inputState" class="form-label">サイズ</label>
+            <select id="inputState" class="form-select add-product-select">
+                <option selected>Choose...</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+          </div>
+
+        <div class="col-sm-6 mt-3">
           <label for="inputAddress" class="form-label">金額</label>
           <input type="text" class="form-control" id="product-name" placeholder="¥">
         </div>

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AddProduct;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +38,8 @@ Route::get('/confirm', function () {
     return view('pages.confirm');
 })->name('confirm');
 
-Route::get('/addProduct', [AddProduct::class, 'index'])->name('addProduct');
+Route::get('/addProduct', [AddProductController::class, 'index'])->name('addProduct');
 
-Route::post('/addProduct', [AddProduct::class, 'addPost'])->name('addPost');
+Route::post('/addProduct', [AddProductController::class, 'addPost'])->name('addPost');
 
 require __DIR__ . '/auth.php';
