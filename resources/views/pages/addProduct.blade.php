@@ -8,6 +8,7 @@
       method="post"
       name="addPost"
       class="add-product_form"
+      enctype="multipart/form-data"
     >
 
         @csrf
@@ -16,7 +17,7 @@
         </div> --}}
         <div class="col-sm-6 mt-3">
           <label for="file" class="form-label">
-            ファイル
+            商品画像
           </label>
           <div id="file" class="input-group">
             <div class="custom-file">
