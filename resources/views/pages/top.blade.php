@@ -13,7 +13,4 @@
 </div>
 </div>
 
-{{-- <div class="p-hero">
-    <img src="{{ asset("images/images.jpg") }}" alt="">
-</div> --}}
 @endsection

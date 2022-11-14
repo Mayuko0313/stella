@@ -12,17 +12,19 @@ class Wear extends Model
 
     protected $fillable = [
         'name',
+        'productImg',
         'sex_id',
         'type_id',
         'price'
     ];
 
-    public function addProduct($name, $sex_id, $type_id, $price)
+    public function addProduct($name, $productImg, $sex_id, $type_id, $price)
     {
         DB::table('wears')
         ->insert(
             [
                 'name' => $name,
+                'productImg' => $productImg,
                 'sex_id' => $sex_id,
                 'type_id' => $type_id,
                 'price' => $price

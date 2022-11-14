@@ -21,7 +21,7 @@
           </label>
           <div id="file" class="input-group">
             <div class="custom-file">
-              <input type="file" id="cutomfile" class="custom-file-input" name="cutomfile[]" multiple />
+              <input type="file" id="customfile" class="custom-file-input" name="customfile[]" multiple />
               <label class="custom-file-label" for="customfile" data-browse="参照">ファイル選択...</label>
             </div>
             <div class="input-group-append">
@@ -134,6 +134,7 @@
         <div class="col-sm-6 mt-3">
           <button type="submit" class="btn btn-primary">商品追加</button>
         </div>
+
 
     </form>
 </div>

@@ -28,11 +28,19 @@ class AddProductController extends Controller
                 ->withInput();
         } else {
             // エラーがなかった場合
+            if (!empty($request->customfile->getClientOriginalName())) {
+                $file_name1 =
+                    time()   . '_' . $request->customfile->getClientOriginalName();
+                $request->customfile->storeAs('public', $file_name1);
+
+                $img = 'storage/' . $file_name1;
+            }
 
             $wear = new Wear();
 
             $wear->addProduct(
                 $request->product_name,
+                $img,
                 $request->product_sex,
                 $request->product_type,
                 $request->product_price

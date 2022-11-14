@@ -27,5 +27,7 @@
             @endif
         </div>
         <script src="{{ asset('js/buyProcess.js') }}" defer></script>
+
+        
     </body>
 </html>
