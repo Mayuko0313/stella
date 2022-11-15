@@ -18,9 +18,9 @@
             <span class="product_item_price">
                 <span class="money">¥{{ $product->price }}</span>
             </span>
-            <a href="{{ route('productDetail') }}">
+            <a href="{{ route('productDetail',['product_id' => $product->id]) }}">
                 <div class="product_item_img">
-                <img src="{{ asset("images/images.jpg") }}" alt="">
+                <img src="{{ asset($product->productImg) }}" alt="">
         </div>
             </a>
     </div>

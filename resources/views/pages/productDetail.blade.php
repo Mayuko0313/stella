@@ -4,14 +4,14 @@
 
 <div class="productDetail">
     <div class="productDetail__img">
-        <img src="{{ asset("images/jacket.webp") }}" alt="">
+        <img src="{{ asset($product->productImg) }}" alt="">
     </div>
     <div class="productDetail__info">
         <h5 class="productDetail__title">
-            <p>CELLO JACKET</p>
+            <p>{{ $product->name }}</p>
         </h5>
         <div class="productDetail__price">
-            <span class="money">¥20,000</span>
+            <span class="money">{{ $product->price }}</span>
         </div>
 
         <div>

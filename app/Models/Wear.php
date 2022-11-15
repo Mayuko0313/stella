@@ -39,7 +39,9 @@ class Wear extends Model
         ];
             $result = DB::select(
             "SELECT
+                w.id,
                 w.name as name,
+                w.productImg,
                 s.name as sex,
                 t.name as type,
                 price
@@ -52,6 +54,21 @@ class Wear extends Model
             WHERE w.sex_id = :sex_id",
             $param
         );
+
+        return $result;
+    }
+
+    public function searchProduct($product_id)
+{
+    $result = DB::table('wears')
+        ->select(
+            'name',
+            'productImg',
+            'price'
+        )
+        ->where('id', '=', $product_id)
+        ->get()
+        ->first();
 
         return $result;
     }

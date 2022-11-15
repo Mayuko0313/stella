@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Wear;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AddProductController extends Controller
@@ -28,13 +29,17 @@ class AddProductController extends Controller
                 ->withInput();
         } else {
             // エラーがなかった場合
-            if (!empty($request->customfile->getClientOriginalName())) {
+            $img = '';
+            if ($request->customfile) {
                 $file_name1 =
                     time()   . '_' . $request->customfile->getClientOriginalName();
                 $request->customfile->storeAs('public', $file_name1);
 
                 $img = 'storage/' . $file_name1;
             }
+
+
+
 
             $wear = new Wear();
 
@@ -45,8 +50,10 @@ class AddProductController extends Controller
                 $request->product_type,
                 $request->product_price
             );
+
+            Session::flash('flash_message', 'データベースに保存できました。');
         }
 
-        return view('pages.addProduct');
+        return redirect('/addProduct');
     }
 }

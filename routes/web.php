@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\ProductDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,7 @@ Route::get('/', function () {
 
 Route::get('/productList/{sex_id}', [ProductListController::class, 'index'])->name('productList');
 
-Route::get('/productDetail', function () {
-    return view('pages.productDetail');
-})->name('productDetail');
+Route::get('/productDetail/{product_id}', [ProductDetailController::class, 'index'])->name('productDetail');
 
 Route::get('/cart', function () {
     return view('pages.cart');

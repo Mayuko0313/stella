@@ -2,6 +2,12 @@
 @extends('appOwner')
 @section('owner__content')
 
+@if (session('flash_message'))
+    <div class="alert alert-success">
+        {{ session('flash_message') }}
+    </div>
+@endif
+
 <div class="add__product">
     <form
       action="{{ route('addPost') }}"
@@ -12,16 +18,13 @@
     >
 
         @csrf
-        {{-- <div class="add__product__img">
-            <img src="{{ asset("images/jacket.webp") }}" alt="">
-        </div> --}}
         <div class="col-sm-6 mt-3">
           <label for="file" class="form-label">
             商品画像
           </label>
           <div id="file" class="input-group">
             <div class="custom-file">
-              <input type="file" id="customfile" class="custom-file-input" name="customfile[]" multiple />
+              <input type="file" id="customfile" class="custom-file-input" name="customfile" multiple />
               <label class="custom-file-label" for="customfile" data-browse="参照">ファイル選択...</label>
             </div>
             <div class="input-group-append">
