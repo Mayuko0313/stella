@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddProductController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\ProductDetailController;
 
@@ -23,10 +24,9 @@ Route::get('/', function () {
 Route::get('/productList/{sex_id}', [ProductListController::class, 'index'])->name('productList');
 
 Route::get('/productDetail/{product_id}', [ProductDetailController::class, 'index'])->name('productDetail');
+Route::post('/productDetail', [ProductDetailController::class, 'addCart'])->name('addCart');
 
-Route::get('/cart', function () {
-    return view('pages.cart');
-})->name('cart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
 Route::get('/buyProcess', function () {
     return view('pages.buyProcess');

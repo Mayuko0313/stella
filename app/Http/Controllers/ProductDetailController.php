@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Wear;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
+
 
 class productDetailController extends Controller
 {
@@ -12,4 +16,24 @@ class productDetailController extends Controller
         $product = $wear->searchProduct($product_id);
         return view('pages.productDetail', compact('product'));
     }
+
+
+public function addCart(Request $request)
+{
+
+    $cartData = '';
+    $data = '';
+    if ($request->hasCookie('cart')) {
+        $data = $request->cookie('cart');
+        $cartData = $data . ',' . $request->size_id . ',' . $request->product_id;
+    } else {
+        $cartData = $request->size_id . ',' . $request->product_id;
+    }
+
+    Cookie::queue('cart', $cartData);
+
+    Session::flash('flash_message', 'カートに保存しました。');
+    return redirect()->route('productDetail', ['product_id' => $request->product_id]);
+   }
 }
+

@@ -21,15 +21,15 @@ class Wear extends Model
     public function addProduct($name, $productImg, $sex_id, $type_id, $price)
     {
         DB::table('wears')
-        ->insert(
-            [
-                'name' => $name,
-                'productImg' => $productImg,
-                'sex_id' => $sex_id,
-                'type_id' => $type_id,
-                'price' => $price
-            ]
-        );
+            ->insert(
+                [
+                    'name' => $name,
+                    'productImg' => $productImg,
+                    'sex_id' => $sex_id,
+                    'type_id' => $type_id,
+                    'price' => $price
+                ]
+            );
     }
 
     public function getAllProduct($sex_id)
@@ -37,7 +37,7 @@ class Wear extends Model
         $param = [
             'sex_id' => $sex_id
         ];
-            $result = DB::select(
+        $result = DB::select(
             "SELECT
                 w.id,
                 w.name as name,
@@ -59,17 +59,57 @@ class Wear extends Model
     }
 
     public function searchProduct($product_id)
-{
-    $result = DB::table('wears')
-        ->select(
-            'name',
-            'productImg',
-            'price'
-        )
-        ->where('id', '=', $product_id)
-        ->get()
-        ->first();
+    {
+        $result = DB::table('wears')
+            ->select(
+                'id',
+                'name',
+                'productImg',
+                'price'
+            )
+            ->where('id', '=', $product_id)
+            ->get()
+            ->first();
 
         return $result;
+    }
+
+    public function searchInCartProducts($cartData)
+    {
+        $results = array();
+
+        foreach ($cartData as $data) {
+            $product = DB::table('wears')
+                ->select(
+                    'id',
+                    'name',
+                    'productImg',
+                    'price'
+                )
+                ->where('id', '=', $data['product_id'])
+                ->get()
+                ->first();
+
+            $size = DB::table('sizes')
+                ->select(
+                    'name'
+                )
+                ->where('id', '=', $data['size_id'])
+                ->get()
+                ->first();
+
+            $result = [
+                'size' => $size->name,
+                'id' => $product->id,
+                'name' => $product->name,
+                'img' => $product->productImg,
+                'price' => $product->price
+            ];
+
+            array_push($results, $result);
+        }
+
+
+        return $results;
     }
 }
