@@ -24,9 +24,19 @@
                 <span class="size">サイズ: {{ $product['size'] }}</span>
               </div>
               <div class="cart__number">
-                  <span class="number">数量:1</span>
+                <div class="product-quantity">
+                  <span class="number">数量:</span>
+                  <input type="number" value="2" min="1">
+                </div>
               </div>
 
+
+            <td>
+                <form action="cart.php" method="post">
+                <input type="hidden" name="delete_name" value="">
+                <button type="button" class="btn btn-red">削除</button>
+            </form>
+            </td>
 
 
           </div>
@@ -34,7 +44,6 @@
     @endforeach
 @endif
 </div>
-
 
 
     <div class="cart__login__button">

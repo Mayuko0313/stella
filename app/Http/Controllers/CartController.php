@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Wear;
 use Illuminate\Http\Request;
 
@@ -30,13 +31,13 @@ class CartController extends Controller
                     array_push($tt, array_combine($keys, $t));
 
                     $t = array();
+
                 }
             }
 
             $wear = new Wear();
             $products = $wear->searchInCartProducts($tt);
           }
-
 
           return view('pages.cart', compact('products'));
         }

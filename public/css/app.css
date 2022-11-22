@@ -531,5 +531,13 @@ table {
     text-align: initial;
 }
 
+.cart__number {
+    margin: 1px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
 
-
+.product-quantity {
+    margin: 10px;
+}

@@ -28,6 +28,8 @@ Route::post('/productDetail', [ProductDetailController::class, 'addCart'])->name
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
+Route::get('cart/remove/{id}', 'CartController@remove');
+
 Route::get('/buyProcess', function () {
     return view('pages.buyProcess');
 })->name('buyProcess');
