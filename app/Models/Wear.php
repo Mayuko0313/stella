@@ -79,6 +79,7 @@ class Wear extends Model
         $results = array();
 
         foreach ($cartData as $data) {
+            // 商品IDから商品情報を取得
             $product = DB::table('wears')
                 ->select(
                     'id',
@@ -87,29 +88,55 @@ class Wear extends Model
                     'price'
                 )
                 ->where('id', '=', $data['product_id'])
-                ->get()
                 ->first();
 
+            // サイズIDからサイズを取得
             $size = DB::table('sizes')
                 ->select(
                     'name'
                 )
                 ->where('id', '=', $data['size_id'])
-                ->get()
                 ->first();
 
+            // 検索結果を加工
             $result = [
                 'size' => $size->name,
                 'id' => $product->id,
                 'name' => $product->name,
                 'img' => $product->productImg,
-                'price' => $product->price
+                'price' => $product->price,
+                'count' => 1
             ];
 
-            array_push($results, $result);
+            // 商品が被っていないか確認
+            $setflg = true;
+            foreach ($results as $index => $product) {
+                if ($result['size'] === $product['size'] && $result['id'] === $product['id']) {
+                    $count = $product['count'];
+                    ++$count;
+                    $duplicate_product['count'] = $count;
+                    $results[$index] = array_merge($product, $duplicate_product);
+                    $setflg = false;
+                    break;
+                }
+            }
+
+            // 被っている商品がなければ検索結果を配列にセットする
+            if  ($setflg) {
+                array_push($results, $result);
+            }
         }
 
 
         return $results;
+    }
+    public function getSizeId(string $size_name){
+        $size = DB::table('sizes')
+        ->select(
+            'id'
+        )
+        ->where('name', '=', $size_name)
+        ->first();
+        return $size->id;
     }
 }

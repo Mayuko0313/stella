@@ -8,7 +8,7 @@
     <h2>カート</h2>
     </div>
     @if ($products)
-        @foreach ($products as $product)
+        @foreach ($products as $index => $product)
           <div class="cart__item" style="margin-bottom: 30px">
               <div class="cart__img">
                 <img src="{{ asset($product['img']) }}" alt="">
@@ -20,25 +20,53 @@
               <div class="cart__price">
                 <span class="money">¥{{ $product['price'] }}</span>
               </div>
-              <div class="cart_size">
-                <span class="size">サイズ: {{ $product['size'] }}</span>
-              </div>
-              <div class="cart__number">
-                <div class="product-quantity">
-                  <span class="number">数量:</span>
-                  <input type="number" value="2" min="1">
+
+
+                <div class="form-check form-check-inline">
+                    @if (@$product['size'] === 'S')
+                        <input class="form-check-input" type="radio" name='size_id_{{ $index }}' id="inlineRadio1" readonly="readonly" onclick="return false;" value="1" checked>
+                    @else
+                        <input class="form-check-input" type="radio" name='size_id_{{ $index }}' id="inlineRadio1" readonly="readonly" onclick="return false;" value="1">
+                    @endif
+                    <label class="form-check-label" for="inlineRadio1">S</label>
                 </div>
-              </div>
+                <div class="form-check form-check-inline">
+                    @if (@$product['size'] === 'M')
+                        <input class="form-check-input" type="radio" name='size_id_{{ $index }}' id="inlineRadio1" readonly="readonly" onclick="return false;" value="2" checked>
+                    @else
+                        <input class="form-check-input" type="radio" name='size_id_{{ $index }}' id="inlineRadio1" readonly="readonly" onclick="return false;" value="2">
+                    @endif
+                    <label class="form-check-label" for="inlineRadio2">M</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @if (@$product['size'] === 'L')
+                        <input class="form-check-input" type="radio" name='size_id_{{ $index }}' id="inlineRadio1" readonly="readonly" onclick="return false;" value="3" checked>
+                    @else
+                        <input class="form-check-input" type="radio" name='size_id_{{ $index }}' id="inlineRadio1" readonly="readonly" onclick="return false;" value="3">
+                    @endif
+                    <label class="form-check-label" for="inlineRadio3">L</label>
+                </div>
 
 
-            <td>
-                <form action="cart.php" method="post">
-                <input type="hidden" name="delete_name" value="">
-                <button type="button" class="btn btn-red">削除</button>
-            </form>
-            </td>
+                    <div class="cart__number">
+                        <div class="product-quantity">
+                           <span class="number">数量:</span>
+                          <input type="number" value='{{ $product["count"] }}' min="1">
+                        </div>
+                      </div>
 
 
+                    <td>
+                        <form action='{{ route("remove") }}' method="post">
+                            @csrf
+                            <input type="hidden" name="id" value='{{ $product["id"] }}'>
+                            <input type="hidden" name="size_name" value='{{ $product["size"] }}'>
+                            <button type="submit" class="btn btn-red">削除</button>
+                        </form>
+                    </td>
+
+                </div>
+                </div>
           </div>
       </div>
     @endforeach

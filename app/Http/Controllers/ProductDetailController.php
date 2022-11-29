@@ -18,22 +18,25 @@ class productDetailController extends Controller
     }
 
 
-public function addCart(Request $request)
-{
+    public function addCart(Request $request)
+    {
+        // カートのデータを初期化
+        $cartData = '';
+        $data = '';
 
-    $cartData = '';
-    $data = '';
-    if ($request->hasCookie('cart')) {
-        $data = $request->cookie('cart');
-        $cartData = $data . ',' . $request->size_id . ',' . $request->product_id;
-    } else {
-        $cartData = $request->size_id . ',' . $request->product_id;
+        // CookieがあればCookieを取得
+        if ($request->hasCookie('cart')) {
+            $data = $request->cookie('cart');
+            $cartData = $data . ',' . $request->size_id . ',' . $request->product_id;
+        } else {
+            $cartData = $request->size_id . ',' . $request->product_id;
+        }
+
+        // Cookieにデータをセット
+        Cookie::queue('cart', $cartData);
+
+        // メッセージをセット
+        Session::flash('flash_message', 'カートに保存しました。');
+        return redirect()->route('productDetail', ['product_id' => $request->product_id]);
     }
-
-    Cookie::queue('cart', $cartData);
-
-    Session::flash('flash_message', 'カートに保存しました。');
-    return redirect()->route('productDetail', ['product_id' => $request->product_id]);
-   }
 }
-

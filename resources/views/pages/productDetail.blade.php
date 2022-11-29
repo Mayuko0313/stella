@@ -39,6 +39,7 @@
             </div>
             </div>
 
+
             <button tipe="button" class="productDetail__cart">
                 <h5>ADD TO CART</h5>
             </button>
