@@ -33,16 +33,8 @@
             <strong>￥30000</strong>
           </li>
         </ul>
-
-        {{-- <form class="card p-2">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="プロモーションコード">
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-secondary">適用</button>
-            </div>
-          </div>
-        </form> --}}
       </div>
+      
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">請求先住所</h4>
         <form class="needs-validation" novalidate>
@@ -62,19 +54,6 @@
               </div>
             </div>
           </div>
-
-          {{-- <div class="mb-3">
-            <label for="username">ユーザー名</label>
-            <div class="input-group has-validation">
-              <div class="input-group-prepend">
-                <span class="input-group-text">@</span>
-              </div>
-              <input type="text" class="form-control" id="username" placeholder="ユーザー名" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                ユーザー名が必要です
-              </div>
-            </div>
-          </div> --}}
 
           <div class="mb-3">
             <label for="email">Eメール <span class="text-muted"></span></label>
@@ -174,14 +153,6 @@
               <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
               <label class="custom-control-label" for="credit">クレジットカード</label>
             </div>
-            {{-- <div class="custom-control custom-radio">
-              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="debit">デビットカード</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="paypal">PayPal</label>
-            </div> --}}
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">

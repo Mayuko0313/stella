@@ -76,6 +76,7 @@ class CartController extends Controller
             $strCookieData = str_replace($size_id.','.$id, '', $strCookieData);
         }
         $strCookieData = ltrim($strCookieData, ',');
+        dd($strCookieData);
         if($strCookieData===""){
             Cookie::queue(Cookie::forget('cart'));
         } else {

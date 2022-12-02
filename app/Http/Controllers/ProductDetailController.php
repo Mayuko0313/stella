@@ -23,6 +23,7 @@ class productDetailController extends Controller
         // カートのデータを初期化
         $cartData = '';
         $data = '';
+        
 
         // CookieがあればCookieを取得
         if ($request->hasCookie('cart')) {

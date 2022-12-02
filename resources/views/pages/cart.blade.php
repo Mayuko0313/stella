@@ -47,18 +47,18 @@
                     <label class="form-check-label" for="inlineRadio3">L</label>
                 </div>
 
-
                     <div class="cart__number">
                         <div class="product-quantity">
                            <span class="number">数量:</span>
                           <input type="number" value='{{ $product["count"] }}' min="1">
                         </div>
-                      </div>
+                    </div>
 
 
                     <td>
                         <form action='{{ route("remove") }}' method="post">
                             @csrf
+
                             <input type="hidden" name="id" value='{{ $product["id"] }}'>
                             <input type="hidden" name="size_name" value='{{ $product["size"] }}'>
                             <button type="submit" class="btn btn-red">削除</button>
