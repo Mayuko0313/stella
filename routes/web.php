@@ -1,10 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AddProductController;
+use App\Http\Controllers\EditProductController;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\DeleteProductController;
 use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\EditProductDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,17 +48,9 @@ Route::get('/addProduct', [AddProductController::class, 'index'])->name('addProd
 
 Route::post('/addProduct', [AddProductController::class, 'addPost'])->name('addPost');
 
-Route::get('/deleteProduct', function () {
-    return view('pages.deleteProduct');
-})->name('deleteProduct');
-
-Route::get('/deleteProduct/{sex_id}', [DeleteProductController::class, 'index'])->name('deleteProduct');
-
-Route::get('/editProduct', function () {
-    return view('pages.editProduct');
-})->name('editProduct');
-
 Route::get('/editProduct/{sex_id}', [EditProductController::class, 'index'])->name('editProduct');
+
+Route::get('/editProductDetail/{sex_id}', [EditProductDetailController::class, 'index'])->name('editProductDetail');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 

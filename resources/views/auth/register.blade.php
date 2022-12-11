@@ -19,11 +19,53 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+            <!-- Kana -->
+            <div>
+                <x-label for="kana" :value="__('Kana')" />
+
+                <x-input id="kana" class="block mt-1 w-full" type="text" name="kana" :value="old('kana')" required autofocus />
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" class="block mt-1 w-full" type="text" name="email" :value="old('email')" required />
+            </div>
+
+            <!-- Post code -->
+            <div class="mt-4">
+                <x-label for="post_code" :value="__('Post_code')" />
+
+                <x-input id="post_code" class="block mt-1 w-full" type="text" name="post_code" :value="old('post_code')" required />
+            </div>
+
+            <!-- Prefecture -->
+            <div class="mt-4">
+                <x-label for="prefecture" :value="__('Prefecture')" />
+
+                <x-input id="prefecture" class="block mt-1 w-full" type="text" name="prefecture" :value="old('prefecture')" required />
+            </div>
+
+            <!-- City -->
+            <div class="mt-4">
+                <x-label for="city" :value="__('City')" />
+
+                <x-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required />
+            </div>
+
+            <!-- Address -->
+            <div class="mt-4">
+                <x-label for="address" :value="__('Address')" />
+
+                <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
+            </div>
+
+            <!-- Buil name -->
+            <div class="mt-4">
+                <x-label for="buil_name" :value="__('Buil_name')" />
+
+                <x-input id="buil_name" class="block mt-1 w-full" type="text" name="buil_name" :value="old('buil_name')" required />
             </div>
 
             <!-- Password -->

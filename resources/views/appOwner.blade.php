@@ -32,38 +32,7 @@
 
               <div class="container-fluid">
                 <div class="row">
-                  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                    <div class="sidebar-sticky pt-3">
-                      <ul class="nav flex-column">
-
-                        <li class="nav-item">
-                          <button class="nav-link" type="submit">
-                          <a href="{{ url('/addProduct') }}">
-                            商品追加
-                          </button>
-                          </a>
-                        </li>
-
-                        <li class="nav-item">
-                          <button class="nav-link" type="submit">
-                          <a href="{{ url('/deleteProduct') }}">
-                            商品削除
-                          </button>
-                          </a>
-                        </li>
-
-                        <li class="nav-item">
-                          <button class="nav-link" type="submit">
-                          <a href="{{ url('/editProduct') }}">
-                            商品編集
-                          </button>
-                          </a>
-                        </li>
-
-                      </ul>
-                      </ul>
-                    </div>
-                  </nav>
+                    @include('parts.sidebar')
                   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                     @yield('owner__content')
                   </main>

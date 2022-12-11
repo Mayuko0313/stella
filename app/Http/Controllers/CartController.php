@@ -6,12 +6,14 @@ namespace App\Http\Controllers;
 use App\Models\Wear;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cookie;
 
 class CartController extends Controller
 {
     public function index(Request $request)
     {
+        // dd(Route::currentRouteName());
         // カート内の商品情報初期化
         $products = null;
 
