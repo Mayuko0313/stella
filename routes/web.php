@@ -30,9 +30,11 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('remove');
 
-Route::get('/buyProcess', function () {
-    return view('pages.buyProcess');
-})->name('buyProcess');
+Route::get('/complete', function () {
+    return view('pages.complete');
+})->name('complete');
+
+Route::get('/buyProcess', [CartController::class, 'buyProcess'])->name('buyProcess');
 
 Route::get('/confirm', function () {
     return view('pages.confirm');
@@ -41,5 +43,20 @@ Route::get('/confirm', function () {
 Route::get('/addProduct', [AddProductController::class, 'index'])->name('addProduct');
 
 Route::post('/addProduct', [AddProductController::class, 'addPost'])->name('addPost');
+
+Route::get('/deleteProduct', function () {
+    return view('pages.deleteProduct');
+})->name('deleteProduct');
+
+Route::get('/deleteProduct/{sex_id}', [DeleteProductController::class, 'index'])->name('deleteProduct');
+
+Route::get('/editProduct', function () {
+    return view('pages.editProduct');
+})->name('editProduct');
+
+Route::get('/editProduct/{sex_id}', [EditProductController::class, 'index'])->name('editProduct');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+
 
 require __DIR__ . '/auth.php';

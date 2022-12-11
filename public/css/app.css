@@ -541,3 +541,10 @@ table {
 .product-quantity {
     margin: 10px;
 }
+
+.complete {
+    font-size: 20px;
+    text-align: center;
+    margin: 100px;
+    height: 100px;
+}

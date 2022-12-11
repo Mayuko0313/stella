@@ -11,33 +11,28 @@
       <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-muted">カート</span>
-          <span class="badge badge-secondary badge-pill">2</span>
+          <span class="badge badge-secondary badge-pill"></span>
         </h4>
         <ul class="list-group mb-3">
+            @foreach ($products as $index => $product)
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-              <h6 class="my-0">CELLO JACKET</h6>
-              <small class="text-muted">サイズ:S 数量:1</small>
+              <h6 class="my-0">{{ $product['name'] }}</h6>
+              <small class="text-muted">{{ 'サイズ:'.$product['size'].' 数量:'.$product['count'] }}</small>
             </div>
-            <span class="text-muted">￥20000</span>
+            <span class="text-muted">¥{{ $product['price'] }}</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <div>
-              <h6 class="my-0">ROTIE PILE TOP</h6>
-              <small class="text-muted">サイズ:S 数量:1</small>
-            </div>
-            <span class="text-muted">￥10000</span>
-          </li>
+            @endforeach
           <li class="list-group-item d-flex justify-content-between">
             <span>合計 (円)</span>
-            <strong>￥30000</strong>
+            <strong>￥{{ $totalPrice }}</strong>
           </li>
         </ul>
       </div>
-      
+
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">請求先住所</h4>
-        <form class="needs-validation" novalidate>
+        <form action="{{ route('complete') }}" class="needs-validation" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="familyName">姓</label>
@@ -188,7 +183,7 @@
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">精算を続ける</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">注文確定</button>
           <a href="{{ route('confirm') }}">
           </a>
         </div>
