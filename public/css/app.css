@@ -548,3 +548,15 @@ table {
     margin: 100px;
     height: 100px;
 }
+
+.productDetail__edit {
+    display: flow-root;
+    margin: 10px
+}
+
+.productDetail__remove {
+    display: flow-root;
+    margin: 10px;
+}
+
+

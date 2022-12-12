@@ -1,6 +1,6 @@
 @section('title', 'Stella Golf')
-@extends('app')
-@section('content')
+@extends('appOwner')
+@section('owner__content')
 
 <div class="products">
     <div class="mx-auto" style="max-width:1200px">
@@ -18,10 +18,10 @@
             <span class="product_item_price">
                 <span class="money">¥{{ $product->price }}</span>
             </span>
-            <a href="{{ route('productDetail',['product_id' => $product->id]) }}">
+            <a href="{{ route('editProductDetail',['product_id' => $product->id]) }}">
                 <div class="product_item_img">
                 <img src="{{ asset($product->productImg) }}" alt="">
-        </div>
+                </div>
             </a>
     </div>
     @endforeach

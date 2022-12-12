@@ -12,7 +12,7 @@
 
         <li class="nav-item">
           <button class="nav-link" type="submit">
-          <a href="{{ route("editProduct", ['sex_id' => 2]) }}">
+          <a href="{{ route("editProductList", ['sex_id' => 2]) }}">
             商品削除/編集(Mens)
           </button>
           </a>
@@ -20,7 +20,7 @@
 
         <li class="nav-item">
             <button class="nav-link" type="submit">
-            <a href="{{ route("editProduct", ['sex_id' => 1]) }}">
+            <a href="{{ route("editProductList", ['sex_id' => 1]) }}">
               商品削除/編集(Woman)
             </button>
             </a>

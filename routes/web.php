@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AddProductController;
-use App\Http\Controllers\EditProductController;
+use App\Http\Controllers\EditProductListController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\DeleteProductController;
 use App\Http\Controllers\ProductDetailController;
@@ -48,9 +48,9 @@ Route::get('/addProduct', [AddProductController::class, 'index'])->name('addProd
 
 Route::post('/addProduct', [AddProductController::class, 'addPost'])->name('addPost');
 
-Route::get('/editProduct/{sex_id}', [EditProductController::class, 'index'])->name('editProduct');
+Route::get('/editProductList/{sex_id}', [EditProductListController::class, 'index'])->name('editProductList');
 
-Route::get('/editProductDetail/{sex_id}', [EditProductDetailController::class, 'index'])->name('editProductDetail');
+Route::get('/editProductDetail/{product_id}', [EditProductDetailController::class, 'index'])->name('editProductDetail');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 

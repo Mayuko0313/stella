@@ -17,6 +17,7 @@
         <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     </head>
     <body>
+
         <div id="app">
             <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="サイドバーメニュー" aria-expanded="false" aria-label="ナビゲーションの切替">
