@@ -13,4 +13,7 @@ class EditProductDetailController extends Controller
         $product = $wear->searchProduct($product_id);
         return view('pages.editProductDetail', compact('product'));
     }
+
+    // DELETE/EDIT追加
+    
 }

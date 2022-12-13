@@ -6,7 +6,6 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\EditProductListController;
 use App\Http\Controllers\ProductListController;
-use App\Http\Controllers\DeleteProductController;
 use App\Http\Controllers\ProductDetailController;
 use App\Http\Controllers\EditProductDetailController;
 

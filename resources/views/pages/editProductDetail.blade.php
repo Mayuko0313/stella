@@ -12,16 +12,16 @@
     @csrf
 
     <div class="productDetail">
-        <input type="hidden" name="product_id" value="{{$product ?? ''->id}}">
+        <input type="hidden" name="product_id" value="{{$product->id}}">
         <div class="productDetail__img">
-            <img src="{{ asset($product ?? ''->productImg) }}" alt="">
+            <img src="{{ asset($product->productImg) }}" alt="">
         </div>
         <div class="productDetail__info">
             <h5 class="productDetail__title">
-                <p>{{ $product ?? ''->name }}</p>
+                <p>{{ $product->name }}</p>
             </h5>
             <div class="productDetail__price">
-                <span class="money">¥ {{ $product ?? ''->price }}</span>
+                <span class="money">¥ {{ $product->price }}</span>
             </div>
 
             <div>
@@ -38,17 +38,17 @@
                 <label class="form-check-label" for="inlineRadio3">L</label>
             </div>
             </div>
+
+
+            <button tipe="button" class="productDetail__cart">
+                <h5>編集</h5>
+            </button>
+
+            <button tipe="button" class="productDetail__cart">
+                <h5>削除</h5>
+            </button>
+
         </div>
-    </div>
-
-    <div class="editProductDetail">
-        <button type="button" class="productDetail__edit">
-            <h5>商品編集</h5>
-        </button>
-
-        <button type="button" class="productDetail__remove">
-            <h5>商品削除</h5>
-        </button>
     </div>
 </form>
 
