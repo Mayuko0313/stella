@@ -14,6 +14,11 @@ class EditProductDetailController extends Controller
         return view('pages.editProductDetail', compact('product'));
     }
 
-    // DELETE/EDIT追加
-    
+    // 管理者画面　商品編集・削除
+    public function editProduct($product_id)
+    {
+        $wear = new Wear();
+
+        Wear::find($product_id)->delete();
+    }
 }

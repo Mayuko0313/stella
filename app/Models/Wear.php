@@ -139,4 +139,14 @@ class Wear extends Model
         ->first();
         return $size->id;
     }
+
+    public function editProduct($product_id)
+    DB::table('wears')
+    ->insert(
+        [
+            'name' => $name,
+            'productImg' => $productImg,
+            'price' => $price
+        ]
+    );
 }

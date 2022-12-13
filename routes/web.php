@@ -51,6 +51,8 @@ Route::get('/editProductList/{sex_id}', [EditProductListController::class, 'inde
 
 Route::get('/editProductDetail/{product_id}', [EditProductDetailController::class, 'index'])->name('editProductDetail');
 
+Route::post('/editProductDetail/{product_id}', [EditProductDetailProductController::class, 'editProduct'])->name('editProduct');
+
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 

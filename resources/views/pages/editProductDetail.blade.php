@@ -8,7 +8,7 @@
     </div>
 @endif
 
-<form action="{{ route('addCart')}}" method="POST">
+<form action="{{ route('editProduct', ['product_id' => $product->id]) }}" method="POST">
     @csrf
 
     <div class="productDetail">
@@ -41,11 +41,11 @@
 
 
             <button tipe="button" class="productDetail__cart">
-                <h5>編集</h5>
+                    <h5>編集</h5>
             </button>
 
             <button tipe="button" class="productDetail__cart">
-                <h5>削除</h5>
+                    <h5>削除</h5>
             </button>
 
         </div>
