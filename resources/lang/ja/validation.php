@@ -85,7 +85,7 @@ return [
     'max' => [
         'numeric' => 'The :attribute must not be greater than :max.',
         'file' => 'The :attribute must not be greater than :max kilobytes.',
-        'string' => 'attribute は:MAX 文字以内で入力してください。',
+        'string' => ':attribute は:max 文字以内で入力してください。',
         'array' => 'The :attribute must not have more than :max items.',
     ],
     'mimes' => 'The :attribute must be a file of type: :values.',
@@ -160,7 +160,7 @@ return [
 
     'attributes' => [
         'product_name' => '商品名',
-        'product_money' => '金額'
+        'product_price' => '金額'
     ],
 
 ];

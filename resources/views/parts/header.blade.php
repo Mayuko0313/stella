@@ -27,14 +27,23 @@
 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}">ログアウト</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" style="background-color: white; border:none;"  class="nav-link">ログアウト</button>
+                    </form>
                 </li>
+
+                {{-- 管理者の場合管理者ログインボタンを出す --}}
+                @if (auth()->user()->role === 1)
+                    <a class="nav-link" href="{{ route('admin') }}">管理者</a>
+                @endif
+
                 @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">ログイン</a>
                 </li>
                 @if (Route::has('register'))
-                <a class="nav-link" href="{{ route('register') }}">会員登録</a>
+                    <a class="nav-link" href="{{ route('register') }}">会員登録</a>
         @endif
     @endauth
 </ul>

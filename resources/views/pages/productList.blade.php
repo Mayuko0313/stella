@@ -9,6 +9,7 @@
         </h1>
     </div>
 
+{{-- 中身を一つずつ入れていく --}}
     <div class="product_contents">
         @foreach ($products as $product)
         <div class="product_item">

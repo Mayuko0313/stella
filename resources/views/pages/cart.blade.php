@@ -7,6 +7,7 @@
     <div class="cart__maintitle">
     <h2>カート</h2>
     </div>
+    {{-- 中身があるかチェック --}}
     @if ($products)
         @foreach ($products as $index => $product)
           <div class="cart__item" style="margin-bottom: 30px">
@@ -22,6 +23,7 @@
               </div>
 
 
+              {{-- $indexでnameを分ける サイズを判断 $indexがない場合全て同じサイズになる--}}
                 <div class="form-check form-check-inline">
                     @if (@$product['size'] === 'S')
                         <input class="form-check-input" type="radio" name='size_id_{{ $index }}' id="inlineRadio1" readonly="readonly" onclick="return false;" value="1" checked>
@@ -55,10 +57,10 @@
                     </div>
 
 
+                    {{-- postで送信したいからformタグにする --}}
                     <td>
                         <form action='{{ route("remove") }}' method="post">
                             @csrf
-
                             <input type="hidden" name="id" value='{{ $product["id"] }}'>
                             <input type="hidden" name="size_name" value='{{ $product["size"] }}'>
                             <button type="submit" class="btn btn-red">削除</button>
@@ -70,7 +72,6 @@
           </div>
       </div>
     @endforeach
-@endif
 </div>
 
 
@@ -89,8 +90,9 @@
 
     </div>
 </div>
-
-
+@else
+    <h2 class="text-center">カートの中身が空です</h2>
+@endif
 
 <button type="button" onClick="history.back()">戻る</button>
 @endsection

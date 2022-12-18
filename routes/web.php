@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AddProductController;
-use App\Http\Controllers\EditProductListController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\EditProductListController;
 use App\Http\Controllers\EditProductDetailController;
 
 /*
@@ -51,9 +52,9 @@ Route::get('/editProductList/{sex_id}', [EditProductListController::class, 'inde
 
 Route::get('/editProductDetail/{product_id}', [EditProductDetailController::class, 'index'])->name('editProductDetail');
 
-Route::post('/editProductDetail/{product_id}', [EditProductDetailProductController::class, 'editProduct'])->name('editProduct');
+Route::post('/editProductDetail/{product_id}', [EditProductDetailController::class, 'editProduct'])->name('editProduct');
 
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 
 require __DIR__ . '/auth.php';

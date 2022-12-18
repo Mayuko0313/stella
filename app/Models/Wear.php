@@ -140,13 +140,17 @@ class Wear extends Model
         return $size->id;
     }
 
-    public function editProduct($product_id)
-    DB::table('wears')
-    ->insert(
-        [
-            'name' => $name,
-            'productImg' => $productImg,
-            'price' => $price
-        ]
-    );
+    public function editProduct($product_id, $img, $name, $price)
+    {
+        // 商品更新
+        DB::table('wears')
+        ->where('id', '=', $product_id)
+        ->update(
+            [
+                'productImg' => $img,
+                'name' => $name,
+                'price' => $price
+            ]
+        );
+    }
 }

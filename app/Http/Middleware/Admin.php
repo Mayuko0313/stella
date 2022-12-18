@@ -24,7 +24,7 @@ class Admin
         }
 
         //ユーザーの権限チェック
-        if (auth()->user()->role === 'admin') {
+        if (auth()->user()->role === 1) {
             $this->auth = true;
         } else {
             $this->auth = false;
@@ -38,7 +38,4 @@ class Admin
         //それ以外はログイン画面にリダイレクト
         return redirect()->route('login')->with('error', '権限がありません');
     }
-
 }
-
-?>

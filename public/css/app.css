@@ -402,10 +402,6 @@ table {
     vertical-align: text-bottom;
 }
 
-/*
-   * サイドバー
-   */
-
 .sidebar {
     position: fixed;
     top: 0;

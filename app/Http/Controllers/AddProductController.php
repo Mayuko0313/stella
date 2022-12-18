@@ -16,8 +16,8 @@ class AddProductController extends Controller
 
     public function addPost(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'product_name' => ['required', 'string', 'max:10'],
+       $validator = Validator::make($request->all(), [
+            'product_name' => ['required', 'string', 'max:20'],
             'product_price' => ['required', 'regex:/^[0-9]+$/i']
         ]);
 
